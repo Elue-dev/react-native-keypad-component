@@ -1,5 +1,5 @@
 {
-  "name": "react-native-keypad",
+  "name": "@eluedev/react-native-keypad",
   "version": "0.1.0",
   "description": "Customizable keypad component for react native",
   "source": "./src/index.tsx",
@@ -64,7 +64,8 @@
   },
   "homepage": "https://github.com/Elue-dev/react-native-keypad#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^17.0.2",
