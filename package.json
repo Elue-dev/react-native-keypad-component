@@ -83,6 +83,7 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
     "jest": "^30.0.5",
+    "jest-environment-jsdom": "^30.0.5",
     "prettier": "^3.0.3",
     "react": "19.0.0",
     "react-native": "0.79.5",
