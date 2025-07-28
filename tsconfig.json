@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "rootDir": ".",
+    "types": ["jest", "react", "react-native"],
     "paths": {
       "react-native-keypad": ["./src/index"]
     },
@@ -8,7 +9,7 @@
     "allowUnusedLabels": false,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react-jsx",
+    "jsx": "react-native",
     "lib": ["ESNext"],
     "module": "ESNext",
     "moduleResolution": "Bundler",
