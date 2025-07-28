@@ -1,4 +1,4 @@
-# react-native-keypad
+# @eluedev/react-native-keypad
 
 A customizable and animated keypad component for React Native applications, perfect for PIN entry, passcode screens, and secure input scenarios.
 
@@ -18,25 +18,25 @@ A customizable and animated keypad component for React Native applications, perf
 ### npm
 
 ```sh
-npm install react-native-keypad
+npm install @eluedev/react-native-keypad
 ```
 
 ### yarn
 
 ```sh
-yarn add react-native-keypad
+yarn add @eluedev/react-native-keypad
 ```
 
 ### bun
 
 ```sh
-bun add react-native-keypad
+bun add @eluedev/react-native-keypad
 ```
 
 ### Expo
 
 ```sh
-npx expo install react-native-keypad
+npx expo install @eluedev/react-native-keypad
 ```
 
 ### Peer Dependencies
@@ -53,7 +53,7 @@ Make sure to follow the [React Native Reanimated installation guide](https://doc
 
 ```js
 import React from 'react';
-import { Keypad } from 'react-native-keypad';
+import { Keypad } from '@eluedev/react-native-keypad';
 
 export default function App() {
   const handlePinEntered = (pin) => {
@@ -70,7 +70,7 @@ export default function App() {
 ```js
 import React, { useState } from 'react';
 import { View, Text } from 'react-native';
-import { Keypad } from 'react-native-keypad';
+import { Keypad } from '@eluedev/react-native-keypad';
 
 export default function SecureScreen() {
   const [hasError, setHasError] = useState(false);
