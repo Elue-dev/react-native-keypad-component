@@ -1,7 +1,7 @@
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import React, { useState } from 'react';
 import { Alert, Platform, Text, TouchableOpacity, View } from 'react-native';
-import { Keypad } from 'react-native-keypad';
+import { Keypad } from '@eluedev/react-native-keypad';
 
 export default function App() {
   const [pinErrored, setPinErrored] = useState(false);

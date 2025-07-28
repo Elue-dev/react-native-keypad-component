@@ -3,7 +3,7 @@
     "rootDir": ".",
     "types": ["jest", "react", "react-native"],
     "paths": {
-      "react-native-keypad": ["./src/index"]
+      "@eluedev/react-native-keypad": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
