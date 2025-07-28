@@ -1,14 +1,12 @@
 module.exports = {
-  preset: 'ts-jest',
+  preset: 'react-native',
   testEnvironment: 'jsdom',
   transform: {
-    '^.+\\.tsx?$': 'ts-jest',
+    '^.+\\.[jt]sx?$': 'babel-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
-  globals: {
-    'ts-jest': {
-      isolatedModules: true,
-      tsconfig: 'tsconfig.json',
-    },
-  },
+  modulePathIgnorePatterns: [
+    '<rootDir>/example/node_modules',
+    '<rootDir>/lib/',
+  ],
 };
