@@ -8,7 +8,7 @@ export type KeypadProps = {
   onPinErrored?: boolean;
   errorMessageComponent?: () => ReactNode;
   pinLength?: number;
-  style?: ViewStyle;
+  containerStyle?: ViewStyle;
   buttonStyle?: ViewStyle;
   buttonTextStyle?: TextStyle;
   keypadTextSize?: number;

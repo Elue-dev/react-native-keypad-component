@@ -20,7 +20,7 @@ export function Keypad({
   onPinErrored,
   errorMessageComponent,
   pinLength = DEFAULTS.pinLength,
-  style,
+  containerStyle,
   buttonStyle,
   buttonTextStyle,
   keypadTextSize = DEFAULTS.keypadTextSize,
@@ -121,7 +121,7 @@ export function Keypad({
   }
 
   return (
-    <View style={[styles.container, style]}>
+    <View style={[styles.container, containerStyle]}>
       <Animated.View style={[styles.dotsContainer, animatedStyle]}>
         {Array.from({ length: pinLength }).map((_, index) => {
           return (

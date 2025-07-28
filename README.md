@@ -128,7 +128,7 @@ export default function SecureScreen() {
 | `keypadTextSize`                | `number`                | ❌       | `24`        | Font size for keypad button text                    |
 | `disableKeypadBackground`       | `boolean`               | ❌       | `false`     | Removes background color from buttons               |
 | `usesFaceId`                    | `boolean`               | ❌       | `false`     | Enables Face ID/Touch ID button                     |
-| `keypadRadius`                  | `number`                | ❌       | `8`         | Border radius for buttons and dots                  |
+| `keypadRadius`                  | `number`                | ❌       | `30`        | Border radius for kaypad buttons                    |
 | `theme`                         | `'light' \| 'dark'`     | ❌       | `'light'`   | Overall theme of the keypad                         |
 | `keypadColorLight`              | `string`                | ❌       | `'#f2f2f7'` | Button background color in light theme              |
 | `keypadColorDark`               | `string`                | ❌       | `'#1c1c1e'` | Button background color in dark theme               |
