@@ -100,6 +100,8 @@
     "react": "19.0.0",
     "react-native": "0.79.5",
     "react-native-builder-bob": "^0.32.0",
+    "react-native-gesture-handler": "2.27.2",
+    "react-native-reanimated": "3.17.4",
     "react-test-renderer": "^19.1.1",
     "release-it": "^17.10.0",
     "ts-jest": "^29.4.0",
@@ -110,7 +112,9 @@
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "react-native-gesture-handler": ">=2.27.0",
+    "react-native-reanimated": ">=3.17.0"
   },
   "workspaces": [
     "example"
@@ -198,9 +202,5 @@
     "languages": "js",
     "type": "library",
     "version": "0.46.0"
-  },
-  "dependencies": {
-    "react-native-gesture-handler": "^2.27.2",
-    "react-native-reanimated": "3.17.5"
   }
 }
