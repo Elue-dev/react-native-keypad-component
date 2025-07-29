@@ -1,5 +1,5 @@
 {
-  "name": "@eluedev/react-native-keypad",
+  "name": "react-native-keypad-component",
   "version": "0.1.0",
   "description": "Customizable keypad component for react native",
   "source": "./src/index.tsx",
@@ -43,7 +43,8 @@
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "clean": "del-cli lib",
     "prepare": "bob build",
-    "release": "release-it"
+    "release": "release-it",
+    "publish": "npm publish"
   },
   "keywords": [
     "react-native",
@@ -55,14 +56,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Elue-dev/react-native-keypad.git"
+    "url": "git+https://github.com/Elue-dev/react-native-keypad-component.git"
   },
   "author": "Wisdom Elue <eluewisdom@gmail.com> (https://github.com/Elue-dev)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Elue-dev/react-native-keypad/issues"
+    "url": "https://github.com/Elue-dev/react-native-keypad-component/issues"
   },
-  "homepage": "https://github.com/Elue-dev/react-native-keypad#readme",
+  "homepage": "https://github.com/Elue-dev/react-native-keypad-component#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"

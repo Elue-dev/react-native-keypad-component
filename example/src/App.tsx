@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { Keypad } from '@eluedev/react-native-keypad';
+import { Keypad } from 'react-native-keypad-component';
 
 export default function App() {
   const [pinErrored, setPinErrored] = useState(false);
