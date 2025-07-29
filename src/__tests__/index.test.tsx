@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as TestingLibrary from '@testing-library/react-native';
-import { Keypad } from '../index';
+import Keypad from '../index';
 import { Text } from 'react-native';
 
 const { render, fireEvent } = TestingLibrary;

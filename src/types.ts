@@ -16,13 +16,12 @@ export type KeypadProps = {
   usesFaceId?: boolean;
   keypadRadius?: number;
   theme?: Theme;
-  keypadColorLight?: string;
-  keypadColorDark?: string;
-  textColorLight?: string;
-  textColorDark?: string;
-  dotColorLight?: string;
-  dotColorDark?: string;
+  keypadColor?: string;
+  textColor?: string;
+  activeDotColor?: string;
   emptyDotColor?: string;
+  dotWidth?: number;
+  dotHeight?: number;
   gridGap?: number;
   renderFaceIdIcon?: () => ReactNode;
   applyBackgroundToFaceIdButton?: boolean;

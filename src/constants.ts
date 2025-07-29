@@ -5,13 +5,15 @@ export const DEFAULTS = {
   gridGap: 10,
   keypadTextSize: 24,
   theme: 'light',
+  dotWidth: 16,
+  dotHeight: 16,
 
   // ===== Color Config =====
   emptyDotColor: '#ccc',
   dotColorLight: '#666',
   dotColorDark: '#444',
   keyboardColorLight: '#eee',
-  keyboardColorDark: '#111',
+  keyboardColorDark: '#222',
   textColorLight: '#000',
   textColorDark: '#fff',
 

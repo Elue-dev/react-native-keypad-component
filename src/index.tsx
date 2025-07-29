@@ -15,7 +15,7 @@ import Animated, {
 import { ANIMATION_VALUES, DEFAULTS } from './constants';
 import type { KeypadProps, Theme } from './types';
 
-export function Keypad({
+export default function Keypad({
   onPinEntered,
   onPinErrored,
   errorMessageComponent,
@@ -28,18 +28,24 @@ export function Keypad({
   usesFaceId = DEFAULTS.useFaceId,
   keypadRadius = DEFAULTS.borderRadius,
   theme = DEFAULTS.theme as Theme,
-  dotColorLight = DEFAULTS.dotColorLight,
-  dotColorDark = DEFAULTS.dotColorDark,
+  activeDotColor,
   emptyDotColor = DEFAULTS.emptyDotColor,
-  keypadColorLight = DEFAULTS.keyboardColorLight,
-  keypadColorDark = DEFAULTS.keyboardColorDark,
-  textColorLight = DEFAULTS.textColorLight,
-  textColorDark = DEFAULTS.textColorDark,
+  keypadColor,
+  textColor,
+  dotWidth = DEFAULTS.dotWidth,
+  dotHeight = DEFAULTS.dotHeight,
   gridGap = DEFAULTS.gridGap,
   renderFaceIdIcon,
   applyBackgroundToFaceIdButton = DEFAULTS.applyFaceIdButtonBackground,
 }: KeypadProps) {
   const isDarkTheme = theme === 'dark';
+  const dotColor = isDarkTheme ? DEFAULTS.dotColorDark : DEFAULTS.dotColorLight;
+  const defaultTextColor = isDarkTheme
+    ? DEFAULTS.textColorDark
+    : DEFAULTS.textColorLight;
+  const defaultKeypadColor = isDarkTheme
+    ? DEFAULTS.keyboardColorDark
+    : DEFAULTS.keyboardColorLight;
   const [pin, setPin] = useState<string>('');
   const offset = useSharedValue(0);
   const animatedStyle = useAnimatedStyle(() => {
@@ -133,11 +139,11 @@ export function Keypad({
                 {
                   backgroundColor:
                     index < pin.length
-                      ? isDarkTheme
-                        ? dotColorDark
-                        : dotColorLight
+                      ? (activeDotColor ?? dotColor)
                       : emptyDotColor,
                   borderRadius: keypadRadius,
+                  width: dotWidth,
+                  height: dotHeight,
                 },
                 animatedDotStyles[index],
               ]}
@@ -184,9 +190,8 @@ export function Keypad({
                           : applyBackgroundToFaceIdButton
                             ? (buttonStyle &&
                                 (buttonStyle as ViewStyle).backgroundColor) ||
-                              (isDarkTheme
-                                ? keypadColorDark || '#1c1c1e'
-                                : keypadColorLight || '#f2f2f7')
+                              keypadColor ||
+                              defaultKeypadColor
                             : 'transparent',
                       },
                       buttonStyle,
@@ -203,9 +208,7 @@ export function Keypad({
                     {
                       backgroundColor: disableKeypadBackground
                         ? 'transparent'
-                        : isDarkTheme
-                          ? keypadColorDark
-                          : keypadColorLight,
+                        : (keypadColor ?? defaultKeypadColor),
                       borderRadius: keypadRadius,
                       opacity: 0,
                     },
@@ -224,9 +227,7 @@ export function Keypad({
                     {
                       backgroundColor: disableKeypadBackground
                         ? 'transparent'
-                        : isDarkTheme
-                          ? keypadColorDark
-                          : keypadColorLight,
+                        : (keypadColor ?? defaultKeypadColor),
                       borderRadius: keypadRadius,
                     },
                     buttonStyle,
@@ -236,7 +237,7 @@ export function Keypad({
                   <Text
                     style={[
                       {
-                        color: isDarkTheme ? textColorDark : textColorLight,
+                        color: textColor ?? defaultTextColor,
                         fontSize: keypadTextSize,
                       },
                       buttonTextStyle,
@@ -258,9 +259,7 @@ export function Keypad({
                   {
                     backgroundColor: disableKeypadBackground
                       ? 'transparent'
-                      : isDarkTheme
-                        ? keypadColorDark
-                        : keypadColorLight,
+                      : (keypadColor ?? defaultKeypadColor),
                     borderRadius: keypadRadius,
                   },
                   buttonStyle,
@@ -270,7 +269,7 @@ export function Keypad({
                 <Text
                   style={[
                     {
-                      color: isDarkTheme ? textColorDark : textColorLight,
+                      color: textColor ?? defaultTextColor,
                       fontSize: keypadTextSize,
                     },
                     buttonTextStyle,
@@ -297,8 +296,6 @@ const styles = StyleSheet.create({
     gap: 5,
   },
   dot: {
-    width: 16,
-    height: 16,
     margin: 8,
     borderRadius: 8,
   },

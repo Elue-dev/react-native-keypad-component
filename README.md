@@ -2,6 +2,8 @@
 
 A customizable and animated keypad component for React Native applications, perfect for PIN entry, passcode screens, and secure input scenarios.
 
+![Keypad Demo](https://res.cloudinary.com/dwdsjbetu/image/upload/v1753799731/ScreenRecording2025-07-29at15.15.12-ezgif.com-video-to-gif-converter_1_pzx9iw.gif)
+
 ## Features
 
 - ✨ Smooth animations with React Native Reanimated
@@ -44,6 +46,7 @@ This package requires the following peer dependencies:
 
 ```sh
 yarn add react-native-reanimated
+yarn add react-native-gesture-handler
 ```
 
 Make sure to follow the [React Native Reanimated installation guide](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/getting-started/) for proper setup.
@@ -52,7 +55,7 @@ Make sure to follow the [React Native Reanimated installation guide](https://doc
 
 ```js
 import React from 'react';
-import { Keypad } from 'react-native-keypad-component';
+import Keypad from 'react-native-keypad-component';
 
 export default function App() {
   const handlePinEntered = (pin) => {
@@ -69,7 +72,7 @@ export default function App() {
 ```js
 import React, { useState } from 'react';
 import { View, Text } from 'react-native';
-import { Keypad } from 'react-native-keypad-component';
+import Keypad from 'react-native-keypad-component';
 
 export default function SecureScreen() {
   const [hasError, setHasError] = useState(false);
@@ -129,13 +132,12 @@ export default function SecureScreen() {
 | `usesFaceId`                    | `boolean`               | ❌       | `false`     | Enables Face ID/Touch ID button                     |
 | `keypadRadius`                  | `number`                | ❌       | `30`        | Border radius for kaypad buttons and dots           |
 | `theme`                         | `'light' \| 'dark'`     | ❌       | `'light'`   | Overall theme of the keypad                         |
-| `keypadColorLight`              | `string`                | ❌       | `'#f2f2f7'` | Button background color in light theme              |
-| `keypadColorDark`               | `string`                | ❌       | `'#1c1c1e'` | Button background color in dark theme               |
-| `textColorLight`                | `string`                | ❌       | `'#000000'` | Text color in light theme                           |
-| `textColorDark`                 | `string`                | ❌       | `'#ffffff'` | Text color in dark theme                            |
-| `dotColorLight`                 | `string`                | ❌       | `'#000000'` | Filled dot color in light theme                     |
-| `dotColorDark`                  | `string`                | ❌       | `'#ffffff'` | Filled dot color in dark theme                      |
+| `keypadColor`                   | `string`                | ❌       | `'#f2f2f7'` | Button background color                             |
+| `textColor`                     | `string`                | ❌       | `'#000000'` | Text color of keypad                                |
+| `dotColor`                      | `string`                | ❌       | `'#000000'` | Filled dot color                                    |
 | `emptyDotColor`                 | `string`                | ❌       | `'#d1d1d6'` | Empty dot color                                     |
+| `dotWidth`                      | `number`                | ❌       | `16`        | Width of PIN dot                                    |
+| `dotHeight`                     | `number`                | ❌       | `16`        | Height of PIN dot                                   |
 | `gridGap`                       | `number`                | ❌       | `10`        | Gap between keypad buttons                          |
 | `renderFaceIdIcon`              | `() => ReactNode`       | ❌       | `undefined` | Custom Face ID/Touch ID icon component              |
 | `applyBackgroundToFaceIdButton` | `boolean`               | ❌       | `true`      | Applies button background to Face ID button         |
@@ -143,22 +145,6 @@ export default function SecureScreen() {
 ## Theming
 
 The keypad supports both light and dark themes out of the box. You can customize colors for each theme:
-
-### Light Theme Colors
-
-- `keypadColorLight`: Button background color
-- `textColorLight`: Button text color
-- `dotColorLight`: Filled dot color
-
-### Dark Theme Colors
-
-- `keypadColorDark`: Button background color
-- `textColorDark`: Button text color
-- `dotColorDark`: Filled dot color
-
-### Universal Colors
-
-- `emptyDotColor`: Color for empty PIN dots
 
 ## Animations
 
@@ -230,16 +216,21 @@ const renderFaceIdIcon = () => (
 ### Colorful Keypad
 
 ```js
+// Example usage with dark mode support
+import { useTheme } from 'your-theme-provider'; // Replace with your theme hook
+
+const isDarkMode = useTheme();
+
 <Keypad
   onPinEntered={handlePin}
-  theme="dark"
-  keypadColorDark="#FF6B6B"
-  textColorDark="#FFFFFF"
-  dotColorDark="#4ECDC4"
-  emptyDotColor="#95A5A6"
+  theme={isDarkMode ? 'dark' : 'light'}
+  keypadColor={isDarkMode ? '#FF6B6B' : '#FDD835'}
+  textColor={isDarkMode ? '#FFFFFF' : '#000000'}
+  activeDotColor={isDarkMode ? '#4ECDC4' : '#1976D2'}
+  emptyDotColor={isDarkMode ? '#95A5A6' : '#BDBDBD'}
   keypadRadius={20}
   gridGap={20}
-/>
+/>;
 ```
 
 ## Testing

@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { Keypad } from 'react-native-keypad-component';
+import Keypad from 'react-native-keypad-component';
 
 export default function App() {
   const [pinErrored, setPinErrored] = useState(false);
@@ -30,12 +30,13 @@ export default function App() {
           }
         }}
         onPinErrored={pinErrored}
-        usesFaceId={true}
         pinLength={5}
+        usesFaceId={true}
         theme={isDarkMode ? 'dark' : 'light'}
         errorMessageComponent={() => (
           <Text style={styles.errorText}>You entered an invalid PIN</Text>
         )}
+        keypadRadius={30}
         renderFaceIdIcon={() => (
           <TouchableOpacity onPress={handleFaceIdAuth}>
             {Platform.OS === 'android' ? (
