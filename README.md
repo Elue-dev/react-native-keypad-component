@@ -14,7 +14,6 @@ Watch demo video here: [Demo Video](https://res.cloudinary.com/dwdsjbetu/image/u
 - 🎯 TypeScript support
 - 📏 Adjustable PIN length
 - 🚫 Built-in error handling with shake animation
-- 🎭 Custom error message components
 
 ## Installation
 
@@ -80,6 +79,7 @@ export default function SecureScreen() {
   const [hasError, setHasError] = useState(false);
 
   const handlePinEntered = (pin) => {
+    // your PIN validation logic here
     if (pin === '1234') {
       setHasError(false);
       // Navigate to secure area
@@ -250,7 +250,3 @@ See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the 
 ## License
 
 MIT
-
----
-
-Made with [create-react-native-library](https://reactnative.dev/docs/the-new-architecture/create-module-library)
