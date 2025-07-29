@@ -2,6 +2,8 @@
 
 A customizable and animated keypad component for React Native applications, perfect for PIN entry, passcode screens, and secure input scenarios.
 
+Watch demo video here: [Demo Video](https://res.cloudinary.com/dwdsjbetu/image/upload/v1753799731/ScreenRecording2025-07-29at15.15.12-ezgif.com-video-to-gif-converter_1_pzx9iw.gif)
+
 ![Keypad Demo](https://res.cloudinary.com/dwdsjbetu/image/upload/v1753799731/ScreenRecording2025-07-29at15.15.12-ezgif.com-video-to-gif-converter_1_pzx9iw.gif)
 
 ## Features
