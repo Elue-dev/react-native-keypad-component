@@ -2001,53 +2001,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eluedev/react-native-keypad@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@eluedev/react-native-keypad@workspace:."
-  dependencies:
-    "@babel/core": ^7.28.0
-    "@babel/plugin-proposal-export-namespace-from": ^7.18.9
-    "@babel/plugin-transform-flow-strip-types": ^7.27.1
-    "@babel/preset-env": ^7.28.0
-    "@babel/preset-flow": ^7.27.1
-    "@babel/preset-react": ^7.27.1
-    "@babel/preset-typescript": ^7.27.1
-    "@commitlint/config-conventional": ^17.0.2
-    "@evilmartians/lefthook": ^1.5.0
-    "@react-native/eslint-config": ^0.73.1
-    "@release-it/conventional-changelog": ^9.0.2
-    "@testing-library/jest-native": ^5.4.3
-    "@testing-library/react-native": ^12.0.0
-    "@types/jest": ^30.0.0
-    "@types/react": ^18.2.44
-    babel-eslint: ^10.1.0
-    babel-jest: ^29.0.0
-    commitlint: ^17.0.2
-    conventional-changelog-angular: ^8.0.0
-    conventional-changelog-conventionalcommits: ^9.1.0
-    del-cli: ^5.1.0
-    eslint: ^8.51.0
-    eslint-config-prettier: ^9.0.0
-    eslint-plugin-prettier: ^5.0.1
-    jest: ^30.0.5
-    jest-environment-jsdom: ^30.0.5
-    metro-react-native-babel-preset: ^0.77.0
-    prettier: ^3.0.3
-    react: 19.0.0
-    react-native: 0.79.5
-    react-native-builder-bob: ^0.32.0
-    react-native-gesture-handler: ^2.27.2
-    react-native-reanimated: 3.17.4
-    react-test-renderer: ^19.1.1
-    release-it: ^17.10.0
-    ts-jest: ^29.4.0
-    typescript: 5.1.6
-  peerDependencies:
-    react: "*"
-    react-native: "*"
-  languageName: unknown
-  linkType: soft
-
 "@emnapi/core@npm:^1.4.3":
   version: 1.4.5
   resolution: "@emnapi/core@npm:1.4.5"
@@ -12282,6 +12235,53 @@ __metadata:
   checksum: 8fb6d8ab7b953c7d7cec8c987cef24f1c5348a293a85cb49c7c53b54ef110c0ca746736ae730e297603c8c76020df912e93915fb17518c4f2f91143757177aba
   languageName: node
   linkType: hard
+
+"react-native-keypad-component@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "react-native-keypad-component@workspace:."
+  dependencies:
+    "@babel/core": ^7.28.0
+    "@babel/plugin-proposal-export-namespace-from": ^7.18.9
+    "@babel/plugin-transform-flow-strip-types": ^7.27.1
+    "@babel/preset-env": ^7.28.0
+    "@babel/preset-flow": ^7.27.1
+    "@babel/preset-react": ^7.27.1
+    "@babel/preset-typescript": ^7.27.1
+    "@commitlint/config-conventional": ^17.0.2
+    "@evilmartians/lefthook": ^1.5.0
+    "@react-native/eslint-config": ^0.73.1
+    "@release-it/conventional-changelog": ^9.0.2
+    "@testing-library/jest-native": ^5.4.3
+    "@testing-library/react-native": ^12.0.0
+    "@types/jest": ^30.0.0
+    "@types/react": ^18.2.44
+    babel-eslint: ^10.1.0
+    babel-jest: ^29.0.0
+    commitlint: ^17.0.2
+    conventional-changelog-angular: ^8.0.0
+    conventional-changelog-conventionalcommits: ^9.1.0
+    del-cli: ^5.1.0
+    eslint: ^8.51.0
+    eslint-config-prettier: ^9.0.0
+    eslint-plugin-prettier: ^5.0.1
+    jest: ^30.0.5
+    jest-environment-jsdom: ^30.0.5
+    metro-react-native-babel-preset: ^0.77.0
+    prettier: ^3.0.3
+    react: 19.0.0
+    react-native: 0.79.5
+    react-native-builder-bob: ^0.32.0
+    react-native-gesture-handler: ^2.27.2
+    react-native-reanimated: 3.17.4
+    react-test-renderer: ^19.1.1
+    release-it: ^17.10.0
+    ts-jest: ^29.4.0
+    typescript: 5.1.6
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  languageName: unknown
+  linkType: soft
 
 "react-native-keypad-example@workspace:example":
   version: 0.0.0-use.local
