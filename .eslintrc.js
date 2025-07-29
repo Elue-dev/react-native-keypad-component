@@ -30,6 +30,7 @@ module.exports = {
     'react-native/no-color-literals': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
     'react-native/sort-styles': 'off',
+    'react-native/no-unused-styles': 'off',
   },
   overrides: [
     {

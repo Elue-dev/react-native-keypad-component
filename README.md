@@ -128,7 +128,7 @@ export default function SecureScreen() {
 | `keypadTextSize`                | `number`                | ❌       | `24`        | Font size for keypad button text                    |
 | `disableKeypadBackground`       | `boolean`               | ❌       | `false`     | Removes background color from buttons               |
 | `usesFaceId`                    | `boolean`               | ❌       | `false`     | Enables Face ID/Touch ID button                     |
-| `keypadRadius`                  | `number`                | ❌       | `30`        | Border radius for kaypad buttons                    |
+| `keypadRadius`                  | `number`                | ❌       | `30`        | Border radius for kaypad buttons and dots           |
 | `theme`                         | `'light' \| 'dark'`     | ❌       | `'light'`   | Overall theme of the keypad                         |
 | `keypadColorLight`              | `string`                | ❌       | `'#f2f2f7'` | Button background color in light theme              |
 | `keypadColorDark`               | `string`                | ❌       | `'#1c1c1e'` | Button background color in dark theme               |
@@ -139,7 +139,7 @@ export default function SecureScreen() {
 | `emptyDotColor`                 | `string`                | ❌       | `'#d1d1d6'` | Empty dot color                                     |
 | `gridGap`                       | `number`                | ❌       | `10`        | Gap between keypad buttons                          |
 | `renderFaceIdIcon`              | `() => ReactNode`       | ❌       | `undefined` | Custom Face ID/Touch ID icon component              |
-| `applyBackgroundToFaceIdButton` | `boolean`               | ❌       | `false`     | Applies button background to Face ID button         |
+| `applyBackgroundToFaceIdButton` | `boolean`               | ❌       | `true`      | Applies button background to Face ID button         |
 
 ## Theming
 

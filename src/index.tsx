@@ -28,8 +28,8 @@ export function Keypad({
   usesFaceId = DEFAULTS.useFaceId,
   keypadRadius = DEFAULTS.borderRadius,
   theme = DEFAULTS.theme as Theme,
-  dotColorLight,
-  dotColorDark,
+  dotColorLight = DEFAULTS.dotColorLight,
+  dotColorDark = DEFAULTS.dotColorDark,
   emptyDotColor = DEFAULTS.emptyDotColor,
   keypadColorLight = DEFAULTS.keyboardColorLight,
   keypadColorDark = DEFAULTS.keyboardColorDark,
@@ -37,7 +37,7 @@ export function Keypad({
   textColorDark = DEFAULTS.textColorDark,
   gridGap = DEFAULTS.gridGap,
   renderFaceIdIcon,
-  applyBackgroundToFaceIdButton = DEFAULTS.applyFaceIdButton,
+  applyBackgroundToFaceIdButton = DEFAULTS.applyFaceIdButtonBackground,
 }: KeypadProps) {
   const isDarkTheme = theme === 'dark';
   const [pin, setPin] = useState<string>('');
@@ -173,29 +173,27 @@ export function Keypad({
             if (key === 'face') {
               return usesFaceId ? (
                 <Fragment key={index}>
-                  {renderFaceIdIcon && (
-                    <TouchableOpacity
-                      activeOpacity={0.6}
-                      style={[
-                        styles.button,
-                        {
-                          borderRadius: keypadRadius,
-                          backgroundColor: disableKeypadBackground
-                            ? 'transparent'
-                            : applyBackgroundToFaceIdButton
-                              ? (buttonStyle &&
-                                  (buttonStyle as ViewStyle).backgroundColor) ||
-                                (isDarkTheme
-                                  ? keypadColorDark || '#1c1c1e'
-                                  : keypadColorLight || '#f2f2f7')
-                              : 'transparent',
-                        },
-                        buttonStyle,
-                      ]}
-                    >
-                      {renderFaceIdIcon()}
-                    </TouchableOpacity>
-                  )}
+                  <TouchableOpacity
+                    activeOpacity={0.6}
+                    style={[
+                      styles.button,
+                      {
+                        borderRadius: keypadRadius,
+                        backgroundColor: disableKeypadBackground
+                          ? 'transparent'
+                          : applyBackgroundToFaceIdButton
+                            ? (buttonStyle &&
+                                (buttonStyle as ViewStyle).backgroundColor) ||
+                              (isDarkTheme
+                                ? keypadColorDark || '#1c1c1e'
+                                : keypadColorLight || '#f2f2f7')
+                            : 'transparent',
+                      },
+                      buttonStyle,
+                    ]}
+                  >
+                    {renderFaceIdIcon ? renderFaceIdIcon() : <Text>🔐</Text>}
+                  </TouchableOpacity>
                 </Fragment>
               ) : (
                 <View

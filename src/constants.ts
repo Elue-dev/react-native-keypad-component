@@ -8,6 +8,8 @@ export const DEFAULTS = {
 
   // ===== Color Config =====
   emptyDotColor: '#ccc',
+  dotColorLight: '#666',
+  dotColorDark: '#444',
   keyboardColorLight: '#eee',
   keyboardColorDark: '#111',
   textColorLight: '#000',
@@ -16,7 +18,7 @@ export const DEFAULTS = {
   // ===== Feature Toggles =====
   displayKeypadBg: false,
   useFaceId: false,
-  applyFaceIdButton: false,
+  applyFaceIdButtonBackground: true,
 };
 
 // ===== Animation Config =====
