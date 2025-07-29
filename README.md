@@ -6,7 +6,6 @@ A customizable and animated keypad component for React Native applications, perf
 
 - ✨ Smooth animations with React Native Reanimated
 - 🎨 Customizable themes (light/dark)
-- 📱 Biometric authentication support (Face ID/Touch ID)
 - 🔧 Highly configurable styling
 - 🎯 TypeScript support
 - 📏 Adjustable PIN length
