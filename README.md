@@ -56,8 +56,9 @@ Make sure to follow the [React Native Reanimated installation guide](https://doc
 
 For quick scaffolding, you can also use the [React Native Keypad Component CLI](https://github.com/Elue-dev/react-native-keypad-component-cli):
 
-````sh
+```sh
 npx react-native-keypad-component
+```
 
 ## Basic Usage
 
@@ -73,7 +74,7 @@ export default function App() {
 
   return <Keypad onPinEntered={handlePinEntered} pinLength={4} />;
 }
-````
+```
 
 ## Advanced Usage
 
