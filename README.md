@@ -54,7 +54,7 @@ Make sure to follow the [React Native Reanimated installation guide](https://doc
 
 ### CLI Tool
 
-For quick scaffolding, you can also use the [React Native Keypad Component CLI](https://github.com/Elue-dev/react-native-keypad-component-cli):
+For quick scaffolding, you can also use the [React Native Keypad Component CLI](https://github.com/Elue-dev/rn-keypad-cli) to add the source code directly to your project. This makes it even easier than it already is to customize the component to fit your exact needs.
 
 ```sh
 npx rn-keypad-cli@latest
