@@ -57,7 +57,7 @@ Make sure to follow the [React Native Reanimated installation guide](https://doc
 For quick scaffolding, you can also use the [React Native Keypad Component CLI](https://github.com/Elue-dev/react-native-keypad-component-cli):
 
 ```sh
-npx react-native-keypad-component
+npx rn-keypad-cli@latest
 ```
 
 ## Basic Usage
