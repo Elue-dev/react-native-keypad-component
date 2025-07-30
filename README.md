@@ -52,6 +52,13 @@ yarn add react-native-gesture-handler
 
 Make sure to follow the [React Native Reanimated installation guide](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/getting-started/) for proper setup.
 
+### CLI Tool
+
+For quick scaffolding, you can also use the [React Native Keypad Component CLI](https://github.com/Elue-dev/react-native-keypad-component-cli):
+
+````sh
+npx react-native-keypad-component
+
 ## Basic Usage
 
 ```js
@@ -66,7 +73,7 @@ export default function App() {
 
   return <Keypad onPinEntered={handlePinEntered} pinLength={4} />;
 }
-```
+````
 
 ## Advanced Usage
 
