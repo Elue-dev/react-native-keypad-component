@@ -61,10 +61,18 @@ export default function Keypad({
   ];
 
   const animatedDotStyles = [
-    useAnimatedStyle(() => ({ transform: [{ scale: dotScales[0]!.value }] })),
-    useAnimatedStyle(() => ({ transform: [{ scale: dotScales[1]!.value }] })),
-    useAnimatedStyle(() => ({ transform: [{ scale: dotScales[2]!.value }] })),
-    useAnimatedStyle(() => ({ transform: [{ scale: dotScales[3]!.value }] })),
+    useAnimatedStyle(() => ({
+      transform: [{ scale: dotScales[0]?.value ?? 1 }],
+    })),
+    useAnimatedStyle(() => ({
+      transform: [{ scale: dotScales[1]?.value ?? 2 }],
+    })),
+    useAnimatedStyle(() => ({
+      transform: [{ scale: dotScales[2]?.value ?? 3 }],
+    })),
+    useAnimatedStyle(() => ({
+      transform: [{ scale: dotScales[3]?.value ?? 4 }],
+    })),
   ];
 
   const applyShakeAnimation = useCallback(() => {
@@ -178,7 +186,7 @@ export default function Keypad({
           (key, index) => {
             if (key === 'face') {
               return usesFaceId ? (
-                <Fragment key={index}>
+                <Fragment key={key}>
                   <TouchableOpacity
                     activeOpacity={0.6}
                     style={[
@@ -221,7 +229,7 @@ export default function Keypad({
               return (
                 <TouchableOpacity
                   activeOpacity={0.6}
-                  key={index}
+                  key={key}
                   style={[
                     styles.button,
                     {
