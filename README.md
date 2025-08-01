@@ -117,9 +117,9 @@ export default function SecureScreen() {
         renderFaceIdIcon={renderFaceIdIcon}
         keypadRadius={12}
         gridGap={15}
-        dotColorDark="#007AFF"
-        keypadColorDark="#2C2C2E"
-        textColorDark="#FFFFFF"
+        dotColor="#007AFF"
+        keypadColor="#2C2C2E"
+        textColor="#FFFFFF"
       />
     </View>
   );
@@ -242,14 +242,6 @@ const isDarkMode = useTheme();
   gridGap={20}
 />;
 ```
-
-## Testing
-
-The component includes test IDs for easy testing:
-
-- `pin-dot`: Empty PIN dots
-- `pin-dot-filled`: Filled PIN dots
-- `key-{digit}`: Individual keypad buttons (e.g., `key-1`, `key-2`)
 
 ## Contributing
 
