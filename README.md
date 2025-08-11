@@ -147,8 +147,8 @@ export default function SecureScreen() {
 | ------------------------------- | ------------------------- | -------- | ----------- | --------------------------------------------------- |
 | `onPinEntered`                  | `(pin: string) => void`   | ✅       | -           | Callback function called when PIN entry is complete |
 | `onPinErrored`                  | `boolean`                 | ❌       | `false`     | Triggers error state and shake animation            |
-| `onDigitPressed`                | `(digit: string) => void` | ❌       | -           | Triggers when a digit is pressed                    |
-| `onBackspacePressed`            | `() => void`              | ❌       | -           | Triggers when the backspace button is pressed       |
+| `onDigitPressed`                | `(digit: string) => void` | ❌       | -           | Triggered when a digit is pressed                   |
+| `onBackspacePressed`            | `() => void`              | ❌       | -           | Triggered when the backspace button is pressed      |
 | `errorMessageComponent`         | `() => ReactNode`         | ❌       | `undefined` | Custom component to display error messages          |
 | `pinLength`                     | `number`                  | ❌       | `4`         | Number of digits in the PIN                         |
 | `style`                         | `ViewStyle`               | ❌       | `undefined` | Custom styles for the main container                |
