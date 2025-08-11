@@ -67,10 +67,10 @@ import React from 'react';
 import Keypad from 'react-native-keypad-component';
 
 export default function App() {
-  const handlePinEntered = (pin) => {
+  function handlePinEntered(pin) {
     console.log('PIN entered:', pin);
     // Handle PIN validation here
-  };
+  }
 
   return <Keypad onPinEntered={handlePinEntered} pinLength={4} />;
 }
@@ -86,7 +86,7 @@ import Keypad from 'react-native-keypad-component';
 export default function SecureScreen() {
   const [hasError, setHasError] = useState(false);
 
-  const handlePinEntered = (pin) => {
+  function handlePinEntered(pin) {
     // your PIN validation logic here
     if (pin === '1234') {
       setHasError(false);
@@ -95,7 +95,20 @@ export default function SecureScreen() {
       setHasError(true);
       setTimeout(() => setHasError(false), 3000);
     }
-  };
+  }
+
+
+  function onDigitPressed(digit: string) {
+    // Called when a digit is pressed (e.g., to trigger haptic feedback or update state)
+    console.log('Digit pressed:', digit);
+    Haptics.selectionAsync();
+  }
+
+  function onBackspacePressed() {
+    // Called when the backspace button is pressed (e.g., to trigger haptic feedback or clear input)
+    Haptics.selectionAsync();
+  }
+
 
   const renderFaceIdIcon = () => <Text style={{ fontSize: 24 }}>👆</Text>;
 
@@ -110,6 +123,8 @@ export default function SecureScreen() {
       <Keypad
         onPinEntered={handlePinEntered}
         onPinErrored={hasError}
+        onDigitPressed={onDigitPressed}
+        onBackspacePressed={onBackspacePressed}
         errorMessageComponent={renderErrorMessage}
         pinLength={6}
         theme="dark"
@@ -128,29 +143,31 @@ export default function SecureScreen() {
 
 ## Props
 
-| Prop                            | Type                    | Required | Default     | Description                                         |
-| ------------------------------- | ----------------------- | -------- | ----------- | --------------------------------------------------- |
-| `onPinEntered`                  | `(pin: string) => void` | ✅       | -           | Callback function called when PIN entry is complete |
-| `onPinErrored`                  | `boolean`               | ❌       | `false`     | Triggers error state and shake animation            |
-| `errorMessageComponent`         | `() => ReactNode`       | ❌       | `undefined` | Custom component to display error messages          |
-| `pinLength`                     | `number`                | ❌       | `4`         | Number of digits in the PIN                         |
-| `style`                         | `ViewStyle`             | ❌       | `undefined` | Custom styles for the main container                |
-| `buttonStyle`                   | `ViewStyle`             | ❌       | `undefined` | Custom styles for keypad buttons                    |
-| `buttonTextStyle`               | `TextStyle`             | ❌       | `undefined` | Custom styles for button text                       |
-| `keypadTextSize`                | `number`                | ❌       | `24`        | Font size for keypad button text                    |
-| `disableKeypadBackground`       | `boolean`               | ❌       | `false`     | Removes background color from buttons               |
-| `usesFaceId`                    | `boolean`               | ❌       | `false`     | Enables Face ID/Touch ID button                     |
-| `keypadRadius`                  | `number`                | ❌       | `30`        | Border radius for kaypad buttons and dots           |
-| `theme`                         | `'light' \| 'dark'`     | ❌       | `'light'`   | Overall theme of the keypad                         |
-| `keypadColor`                   | `string`                | ❌       | `'#f2f2f7'` | Button background color                             |
-| `textColor`                     | `string`                | ❌       | `'#000000'` | Text color of keypad                                |
-| `dotColor`                      | `string`                | ❌       | `'#000000'` | Filled dot color                                    |
-| `emptyDotColor`                 | `string`                | ❌       | `'#d1d1d6'` | Empty dot color                                     |
-| `dotWidth`                      | `number`                | ❌       | `16`        | Width of PIN dot                                    |
-| `dotHeight`                     | `number`                | ❌       | `16`        | Height of PIN dot                                   |
-| `gridGap`                       | `number`                | ❌       | `10`        | Gap between keypad buttons                          |
-| `renderFaceIdIcon`              | `() => ReactNode`       | ❌       | `undefined` | Custom Face ID/Touch ID icon component              |
-| `applyBackgroundToFaceIdButton` | `boolean`               | ❌       | `true`      | Applies button background to Face ID button         |
+| Prop                            | Type                      | Required | Default     | Description                                         |
+| ------------------------------- | ------------------------- | -------- | ----------- | --------------------------------------------------- |
+| `onPinEntered`                  | `(pin: string) => void`   | ✅       | -           | Callback function called when PIN entry is complete |
+| `onPinErrored`                  | `boolean`                 | ❌       | `false`     | Triggers error state and shake animation            |
+| `onDigitPressed`                | `(digit: string) => void` | ❌       | -           | Triggers when a digit is pressed                    |
+| `onBackspacePressed`            | `() => void`              | ❌       | -           | Triggers when the backspace button is pressed       |
+| `errorMessageComponent`         | `() => ReactNode`         | ❌       | `undefined` | Custom component to display error messages          |
+| `pinLength`                     | `number`                  | ❌       | `4`         | Number of digits in the PIN                         |
+| `style`                         | `ViewStyle`               | ❌       | `undefined` | Custom styles for the main container                |
+| `buttonStyle`                   | `ViewStyle`               | ❌       | `undefined` | Custom styles for keypad buttons                    |
+| `buttonTextStyle`               | `TextStyle`               | ❌       | `undefined` | Custom styles for button text                       |
+| `keypadTextSize`                | `number`                  | ❌       | `24`        | Font size for keypad button text                    |
+| `disableKeypadBackground`       | `boolean`                 | ❌       | `false`     | Removes background color from buttons               |
+| `usesFaceId`                    | `boolean`                 | ❌       | `false`     | Enables Face ID/Touch ID button                     |
+| `keypadRadius`                  | `number`                  | ❌       | `30`        | Border radius for kaypad buttons and dots           |
+| `theme`                         | `'light' \| 'dark'`       | ❌       | `'light'`   | Overall theme of the keypad                         |
+| `keypadColor`                   | `string`                  | ❌       | `'#f2f2f7'` | Button background color                             |
+| `textColor`                     | `string`                  | ❌       | `'#000000'` | Text color of keypad                                |
+| `dotColor`                      | `string`                  | ❌       | `'#000000'` | Filled dot color                                    |
+| `emptyDotColor`                 | `string`                  | ❌       | `'#d1d1d6'` | Empty dot color                                     |
+| `dotWidth`                      | `number`                  | ❌       | `16`        | Width of PIN dot                                    |
+| `dotHeight`                     | `number`                  | ❌       | `16`        | Height of PIN dot                                   |
+| `gridGap`                       | `number`                  | ❌       | `10`        | Gap between keypad buttons                          |
+| `renderFaceIdIcon`              | `() => ReactNode`         | ❌       | `undefined` | Custom Face ID/Touch ID icon component              |
+| `applyBackgroundToFaceIdButton` | `boolean`                 | ❌       | `true`      | Applies button background to Face ID button         |
 
 ## Theming
 
@@ -172,7 +189,7 @@ To display errors and trigger the shake animation:
 ```js
 const [hasError, setHasError] = useState(false);
 
-const handlePinEntered = (pin) => {
+function handlePinEntered(pin) {
   if (isValidPin(pin)) {
     setHasError(false);
     // Handle success
@@ -181,7 +198,7 @@ const handlePinEntered = (pin) => {
     // Clear error after some time
     setTimeout(() => setHasError(false), 3000);
   }
-};
+}
 
 <Keypad
   onPinEntered={handlePinEntered}
@@ -197,8 +214,11 @@ const handlePinEntered = (pin) => {
 Enable Face ID or Touch ID button:
 
 ```js
-const renderFaceIdIcon = () => (
-  <Icon name="face-id" size={24} color="#007AFF" />
+function renderFaceIdIcon ()  (
+ return  (
+   <Icon name="face-id" size={24} color="#007AFF" />
+ )
+
 );
 
 <Keypad

@@ -6935,6 +6935,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"expo-haptics@npm:~14.1.4":
+  version: 14.1.4
+  resolution: "expo-haptics@npm:14.1.4"
+  peerDependencies:
+    expo: "*"
+  checksum: 432c27b13df6f332a33df51564a978a57d734d13a49d4b6fc8975e24d110ca82f9764ec1f27dbe8e679a09478b70e3f8c98192c4199ab07dddcc9e69318eb87e
+  languageName: node
+  linkType: hard
+
 "expo-keep-awake@npm:~14.1.4":
   version: 14.1.4
   resolution: "expo-keep-awake@npm:14.1.4"
@@ -12292,11 +12301,14 @@ __metadata:
     "@babel/core": ^7.20.0
     "@expo/metro-runtime": ~5.0.4
     expo: ^53.0.20
+    expo-haptics: ~14.1.4
     expo-status-bar: ~2.2.3
     react: 19.0.0
     react-dom: 19.0.0
     react-native: 0.79.5
     react-native-builder-bob: ^0.32.0
+    react-native-gesture-handler: 2.27.2
+    react-native-reanimated: 3.17.4
     react-native-web: ~0.20.0
   languageName: unknown
   linkType: soft

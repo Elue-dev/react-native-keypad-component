@@ -6,6 +6,8 @@ export type Theme = 'light' | 'dark';
 export type KeypadProps = {
   onPinEntered: (pin: string) => void;
   onPinErrored?: boolean;
+  onDigitPressed?: (digit: string) => void;
+  onBackspacePressed?: () => void;
   errorMessageComponent?: () => ReactNode;
   pinLength?: number;
   containerStyle?: ViewStyle;

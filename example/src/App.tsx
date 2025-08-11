@@ -10,6 +10,7 @@ import {
   View,
 } from 'react-native';
 import Keypad from 'react-native-keypad-component';
+import * as Haptics from 'expo-haptics';
 
 export default function App() {
   const [pinErrored, setPinErrored] = useState(false);
@@ -17,6 +18,15 @@ export default function App() {
   const styles = getStyles(isDarkMode);
 
   function handleFaceIdAuth() {}
+
+  function onDigitPressed(digit: string) {
+    console.log(digit);
+    Haptics.selectionAsync();
+  }
+
+  function onBackspacePressed() {
+    Haptics.selectionAsync();
+  }
 
   return (
     <View style={styles.container}>
@@ -31,6 +41,9 @@ export default function App() {
         }}
         onPinErrored={pinErrored}
         pinLength={5}
+        keypadColor="#053345"
+        onDigitPressed={onDigitPressed}
+        onBackspacePressed={onBackspacePressed}
         usesFaceId={true}
         theme={isDarkMode ? 'dark' : 'light'}
         errorMessageComponent={() => (

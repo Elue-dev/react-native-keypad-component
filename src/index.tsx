@@ -18,6 +18,8 @@ import type { KeypadProps, Theme } from './types';
 export default function Keypad({
   onPinEntered,
   onPinErrored,
+  onDigitPressed,
+  onBackspacePressed,
   errorMessageComponent,
   pinLength = DEFAULTS.pinLength,
   containerStyle,
@@ -98,6 +100,7 @@ export default function Keypad({
   }, [onPinErrored, applyShakeAnimation]);
 
   function handlePress(digit: string) {
+    onDigitPressed?.(digit);
     const newPin = pin + digit;
     if (newPin.length <= pinLength) {
       setPin(newPin);
@@ -119,6 +122,7 @@ export default function Keypad({
   }
 
   function handleDelete() {
+    onBackspacePressed?.();
     if (pin.length > 0) {
       const indexToAnimate = pin.length - 1;
 
