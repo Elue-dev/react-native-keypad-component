@@ -1,0 +1,85 @@
+---
+title: Introduction
+---
+
+# react-native-keypad-component
+
+A customizable and animated keypad component for React Native applications, perfect for PIN entry, passcode screens, and secure input scenarios.
+
+Watch demo video here: [Demo Video](https://res.cloudinary.com/dwdsjbetu/image/upload/v1753799731/ScreenRecording2025-07-29at15.15.12-ezgif.com-video-to-gif-converter_1_pzx9iw.gif)
+
+![Keypad Demo](https://res.cloudinary.com/dwdsjbetu/image/upload/v1753799731/ScreenRecording2025-07-29at15.15.12-ezgif.com-video-to-gif-converter_1_pzx9iw.gif)
+
+
+
+## Features
+
+- ✨ Smooth animations with React Native Reanimated
+- 🎨 Customizable themes (light/dark)
+- 🔧 Highly configurable styling
+- 🎯 TypeScript support
+- 📏 Adjustable PIN length
+- 🚫 Built-in error handling with shake animation
+
+
+
+## Installation
+
+### npm
+
+```sh
+npm install react-native-keypad-component
+```
+
+### yarn
+
+```sh
+yarn add react-native-keypad-component
+```
+
+### bun
+
+```sh
+bun add react-native-keypad-component
+```
+
+### Expo
+
+```sh
+npx expo install react-native-keypad-component
+```
+
+### Peer Dependencies
+
+This package requires the following peer dependencies:
+
+```sh
+bun add react-native-reanimated
+bun add react-native-gesture-handler
+```
+
+Make sure to follow the [React Native Reanimated installation guide](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/getting-started/) for proper setup.
+
+### CLI Tool
+
+For quick scaffolding, you can also use the [React Native Keypad Component CLI](https://github.com/Elue-dev/rn-keypad-cli) to add the source code directly to your project. This makes it even easier than it already is to customize the component to fit your exact needs.
+
+```sh
+npx rn-keypad-cli@latest
+```
+
+## Basic Usage
+
+```js
+import React from 'react';
+import Keypad from 'react-native-keypad-component';
+
+export default function App() {
+  function handlePinEntered(pin) {
+    console.log('PIN entered:', pin);
+    // Handle PIN validation here
+  }
+
+  return <Keypad onPinEntered={handlePinEntered} pinLength={4} />;
+}
+```

@@ -1,0 +1,30 @@
+---
+title: Handling Errors
+---
+
+## Error Handling
+
+To display errors and trigger the shake animation:
+
+```js
+const [hasError, setHasError] = useState(false);
+
+function handlePinEntered(pin) {
+  if (isValidPin(pin)) {
+    setHasError(false);
+    // Handle success
+  } else {
+    setHasError(true);
+    // Clear error after some time
+    setTimeout(() => setHasError(false), 3000);
+  }
+}
+
+<Keypad
+  onPinEntered={handlePinEntered}
+  onPinErrored={hasError}
+  errorMessageComponent={() => (
+    <Text style={{ color: 'red' }}>Invalid PIN</Text>
+  )}
+/>;
+```

@@ -1,0 +1,30 @@
+{
+  "name": "rn-keypad-component-docs",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev --turbo",
+    "start": "next start",
+    "postinstall": "fumadocs-mdx"
+  },
+  "dependencies": {
+    "next": "16.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "lucide-react": "^0.546.0",
+    "fumadocs-ui": "16.0.1",
+    "fumadocs-core": "16.0.1",
+    "fumadocs-mdx": "13.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "24.9.1",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "typescript": "^5.9.3",
+    "@types/mdx": "^2.0.13",
+    "@tailwindcss/postcss": "^4.1.15",
+    "tailwindcss": "^4.1.15",
+    "postcss": "^8.5.6"
+  }
+}

@@ -1,0 +1,126 @@
+---
+title: Advanced Usage
+description: Learn how to customize and extend the react-native-keypad-component with biometric authentication, and advanced callbacks.
+
+---
+
+Once you’re comfortable with the basics, you can take full control of how the `Keypad` behaves and looks.
+Here are some practical examples showing how to handle authentication, integrate biometrics, and style the keypad for different themes.
+
+
+```js
+import React, { useState } from 'react';
+import { View, Text } from 'react-native';
+import Keypad from 'react-native-keypad-component';
+
+export default function SecureScreen() {
+  const [hasError, setHasError] = useState(false);
+
+  function handlePinEntered(pin) {
+    // your PIN validation logic here
+    if (pin === '1234') {
+      setHasError(false);
+      // Navigate to secure area
+    } else {
+      setHasError(true);
+      setTimeout(() => setHasError(false), 3000);
+    }
+  }
+
+
+  function onDigitPressed(digit: string) {
+    // Called when a digit is pressed (e.g., to trigger haptic feedback or update state)
+    console.log('Digit pressed:', digit);
+    Haptics.selectionAsync();
+  }
+
+  function onBackspacePressed() {
+    // Called when the backspace button is pressed (e.g., to trigger haptic feedback or clear input)
+    Haptics.selectionAsync();
+  }
+
+
+  const renderFaceIdIcon = () => <Text style={{ fontSize: 24 }}>👆</Text>;
+
+  const renderErrorMessage = () => (
+    <Text style={{ color: 'red', marginBottom: 10 }}>
+      Incorrect PIN. Please try again.
+    </Text>
+  );
+
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', padding: 20 }}>
+      <Keypad
+        onPinEntered={handlePinEntered}
+        onPinErrored={hasError}
+        onDigitPressed={onDigitPressed}
+        onBackspacePressed={onBackspacePressed}
+        errorMessageComponent={renderErrorMessage}
+        pinLength={6}
+        theme="dark"
+        usesFaceId={true}
+        renderFaceIdIcon={renderFaceIdIcon}
+        keypadRadius={12}
+        gridGap={15}
+        dotColor="#007AFF"
+        keypadColor="#2C2C2E"
+        textColor="#FFFFFF"
+      />
+    </View>
+  );
+}
+```
+
+## Biometric Authentication
+
+Enable Face ID or Touch ID button:
+
+```js
+function renderFaceIdIcon ()  (
+ return  (
+   <Icon name="face-id" size={24} color="#007AFF" />
+ )
+
+);
+
+<Keypad
+  usesFaceId={true}
+  renderFaceIdIcon={renderFaceIdIcon}
+  applyBackgroundToFaceIdButton={true}
+  onPinEntered={handlePinEntered}
+/>;
+```
+
+## Customization Examples
+
+### Minimal Keypad
+
+```js
+<Keypad
+  onPinEntered={handlePin}
+  disableKeypadBackground={true}
+  pinLength={6}
+  emptyDotColor="transparent"
+  style={{ backgroundColor: 'transparent' }}
+/>
+```
+
+### Colorful Keypad
+
+```js
+// Example usage with dark mode support
+import { useTheme } from 'your-theme-provider'; // Replace with your theme hook
+
+const isDarkMode = useTheme();
+
+<Keypad
+  onPinEntered={handlePin}
+  theme={isDarkMode ? 'dark' : 'light'}
+  keypadColor={isDarkMode ? '#FF6B6B' : '#FDD835'}
+  textColor={isDarkMode ? '#FFFFFF' : '#000000'}
+  activeDotColor={isDarkMode ? '#4ECDC4' : '#1976D2'}
+  emptyDotColor={isDarkMode ? '#95A5A6' : '#BDBDBD'}
+  keypadRadius={20}
+  gridGap={20}
+/>;
+```

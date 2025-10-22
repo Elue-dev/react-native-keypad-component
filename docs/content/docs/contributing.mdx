@@ -1,0 +1,153 @@
+---
+title: Contributing Guide
+description: Learn how to contribute effectively to this project.
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+
+
+We’re thrilled that you want to contribute!
+Follow these steps to set up your environment, work on the library, and preview your changes in the example app.
+
+<Steps>
+
+<Step>
+
+### Fork & Clone the Repository
+
+Start by forking this repo and cloning it to your local machine:
+
+```bash
+git clone https://github.com/Elue-dev/react-native-keypad-component.git
+cd react-native-keypad-component
+```
+
+Ensure you have **Node.js ≥18** and **Bun or npm** installed.
+
+</Step>
+
+<Step>
+
+### Install Dependencies
+
+Install the dependencies for the main library:
+
+```bash
+bun install
+# or
+npm install
+```
+
+</Step>
+
+<Step>
+
+### cd into the Example App
+
+Next, move into the example app directory:
+
+```bash
+cd example
+```
+
+Then install the example app dependencies:
+
+```bash
+bun install
+# or
+npm install
+```
+
+</Step>
+
+<Step>
+
+### Start the Development Server
+
+Run the example app to preview your local changes:
+
+```bash
+bun start
+# or
+npm run start
+```
+
+Then scan the QR code provided on the terminal by Expo and run the app on your Android or iOS device.
+
+</Step>
+
+<Step>
+
+### Create a New Branch
+
+Before making changes, create a branch that describes your work:
+
+```bash
+git switch -c feat/improve-docs
+```
+
+Use conventional naming like `feat/`, `fix/`, `chore/`, or `docs/`.
+
+</Step>
+
+<Step>
+
+### Make Your Changes
+
+Edit the library or documentation as needed.
+
+
+</Step>
+
+<Step>
+
+
+### Commit Using Conventional Commits
+
+Follow the [Conventional Commits](https://www.conventionalcommits.org/) format:
+
+```bash
+git commit -m "fix: corrected example path issue"
+```
+
+</Step>
+
+<Step>
+
+### Push and Open a Pull Request
+
+Push your branch and open a PR to the main branch:
+
+```bash
+git push origin feat/improve-docs
+```
+
+Then click **Compare & Pull Request** on GitHub.
+
+</Step>
+
+<Step>
+
+### Review & Merge
+
+A maintainer will review your PR.
+Once approved, your changes will be merged — and you’ll be added to the contributors list 🎉
+
+</Step>
+
+</Steps>
+
+---
+
+## 🧠 Tips for a Great Contribution
+
+* Keep PRs small and focused.
+* Follow existing linting and formatting rules.
+* Update documentation when changing APIs or behavior.
+* Be collaborative and constructive in discussions.
+
+---
+
+Thank you for contributing 💜
+Your effort helps this project grow and improve!

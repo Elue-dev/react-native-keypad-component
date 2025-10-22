@@ -1,0 +1,48 @@
+---
+title: Props
+description: All props provided by the component
+---
+
+Here’s a breakdown of all the props you can use to customize the component.
+You can tweak its look, behavior, and interactions however you like — it’s built to be flexible!
+
+
+
+| Prop                            | Type                      | Required | Default     | Description                                         |
+| ------------------------------- | ------------------------- | -------- | ----------- | --------------------------------------------------- |
+| `onPinEntered`                  | `(pin: string) => void`   | ✅       | -           | Callback function called when PIN entry is complete |
+| `onPinErrored`                  | `boolean`                 | ❌       | `false`     | Triggers error state and shake animation            |
+| `onDigitPressed`                | `(digit: string) => void` | ❌       | -           | Triggered when a digit is pressed                   |
+| `onBackspacePressed`            | `() => void`              | ❌       | -           | Triggered when the backspace button is pressed      |
+| `errorMessageComponent`         | `() => ReactNode`         | ❌       | `undefined` | Custom component to display error messages          |
+| `pinLength`                     | `number`                  | ❌       | `4`         | Number of digits in the PIN                         |
+| `style`                         | `ViewStyle`               | ❌       | `undefined` | Custom styles for the main container                |
+| `buttonStyle`                   | `ViewStyle`               | ❌       | `undefined` | Custom styles for keypad buttons                    |
+| `buttonTextStyle`               | `TextStyle`               | ❌       | `undefined` | Custom styles for button text                       |
+| `keypadTextSize`                | `number`                  | ❌       | `24`        | Font size for keypad button text                    |
+| `disableKeypadBackground`       | `boolean`                 | ❌       | `false`     | Removes background color from buttons               |
+| `usesFaceId`                    | `boolean`                 | ❌       | `false`     | Enables Face ID/Touch ID button                     |
+| `keypadRadius`                  | `number`                  | ❌       | `30`        | Border radius for kaypad buttons and dots           |
+| `theme`                         | `'light' \| 'dark'`       | ❌       | `'light'`   | Overall theme of the keypad                         |
+| `keypadColor`                   | `string`                  | ❌       | `'#f2f2f7'` | Button background color                             |
+| `textColor`                     | `string`                  | ❌       | `'#000000'` | Text color of keypad                                |
+| `dotColor`                      | `string`                  | ❌       | `'#000000'` | Filled dot color                                    |
+| `emptyDotColor`                 | `string`                  | ❌       | `'#d1d1d6'` | Empty dot color                                     |
+| `dotWidth`                      | `number`                  | ❌       | `16`        | Width of PIN dot                                    |
+| `dotHeight`                     | `number`                  | ❌       | `16`        | Height of PIN dot                                   |
+| `gridGap`                       | `number`                  | ❌       | `10`        | Gap between keypad buttons                          |
+| `renderFaceIdIcon`              | `() => ReactNode`         | ❌       | `undefined` | Custom Face ID/Touch ID icon component              |
+| `applyBackgroundToFaceIdButton` | `boolean`                 | ❌       | `true`      | Applies button background to Face ID button         |
+
+## Theming
+
+The keypad supports both light and dark themes out of the box. You can customize colors for each theme.
+
+## Animations
+
+The keypad includes several built-in animations:
+
+- **Dot Animation**: Dots scale when PIN digits are entered/removed
+- **Shake Animation**: Triggered when `onPinErrored` is true
+- **Error Message**: Smooth zoom in/out transitions
+- **Layout Transitions**: Smooth transitions when error messages appear/disappear
