@@ -1,7 +1,6 @@
 'use client';
 
 import { Button } from '@/components/button';
-import { CodeBlock } from '@/components/code-block';
 import { ArrowRight, Code2, Lock, Zap, Smartphone, Copy } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -158,7 +157,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="border-t border-border bg-card/50 px-4 py-12">
         <div className="mx-auto max-w-6xl">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
