@@ -165,9 +165,17 @@ export default function Home() {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground font-bold">
-                  ⌨️
+                  <Image
+                    src={
+                      'https://res.cloudinary.com/dwdsjbetu/image/upload/v1754157546/ChatGPT_Image_Aug_2_2025_06_58_05_PM_kr7wi4.png'
+                    }
+                    alt="RN Keypad Component"
+                    height={50}
+                    width={50}
+                    className="rounded-full"
+                  />
                 </div>
-                <span className="font-bold">Keypad</span>
+                <span className="font-bold">RN Keypad Comnponent</span>
               </div>
               <p className="text-sm text-muted-foreground">
                 Beautiful keypad component for React Native
