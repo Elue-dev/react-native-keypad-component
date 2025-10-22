@@ -1,0 +1,7 @@
+{
+  "buildCommand": "cd docs && bun run build",
+  "outputDirectory": "docs/.next",
+  "installCommand": "cd docs && bun install",
+  "framework": "nextjs",
+  "rootDirectory": "docs"
+}
